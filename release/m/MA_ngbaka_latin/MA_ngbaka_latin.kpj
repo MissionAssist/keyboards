@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<KeymanDeveloperProject>
+  <Options>
+    <BuildPath>$PROJECTPATH\build</BuildPath>
+    <CompilerWarningsAsErrors>True</CompilerWarningsAsErrors>
+    <WarnDeprecatedCode>True</WarnDeprecatedCode>
+  </Options>
+  <Files>
+    <File>
+      <ID>id_a0fbf053a7a5e6972ae74beb483c073e</ID>
+      <Filename>MA_ngbaka_latin.kmn</Filename>
+      <Filepath>source\MA_ngbaka_latin.kmn</Filepath>
+      <FileVersion>2.3</FileVersion>
+      <FileType>.kmn</FileType>
+      <Details>
+        <Name>MA_ngbaka_latin</Name>
+        <Copyright>© MissionAssist CIO</Copyright>
+        <Message>MissionAssist CIO is a UK entity</Message>
+      </Details>
+    </File>
+    <File>
+      <ID>id_94b93b538f00c94eed4a3bd16febbc5d</ID>
+      <Filename>MA_ngbaka_latine.kps</Filename>
+      <Filepath>MA_ngbaka_latine.kps</Filepath>
+      <FileVersion>2.3</FileVersion>
+      <FileType>.kps</FileType>
+      <Details>
+        <Name>Ngbaka Latin (MissionAssist)</Name>
+        <Copyright>© MissionAssist CIO</Copyright>
+        <Version>2.3</Version>
+      </Details>
+    </File>
+    <File>
+      <ID>id_16e7f93ff87f57f4d37f32fab539b68c</ID>
+      <Filename>MA_ngbaka_latin.ico</Filename>
+      <Filepath>source\MA_ngbaka_latin.ico</Filepath>
+      <FileVersion></FileVersion>
+      <FileType>.ico</FileType>
+      <ParentFileID>id_a0fbf053a7a5e6972ae74beb483c073e</ParentFileID>
+    </File>
+    <File>
+      <ID>id_ebeb89904b5a0a111165f39c98f8b278</ID>
+      <Filename>MA_ngbaka_latin.kmx</Filename>
+      <Filepath>build\MA_ngbaka_latin.kmx</Filepath>
+      <FileVersion></FileVersion>
+      <FileType>.kmx</FileType>
+      <ParentFileID>id_94b93b538f00c94eed4a3bd16febbc5d</ParentFileID>
+    </File>
+    <File>
+      <ID>id_ede98e4633e239f933cbfd1f4e1b766c</ID>
+      <Filename>HISTORY.md</Filename>
+      <Filepath>HISTORY.md</Filepath>
+      <FileVersion></FileVersion>
+      <FileType>.md</FileType>
+      <ParentFileID>id_94b93b538f00c94eed4a3bd16febbc5d</ParentFileID>
+    </File>
+    <File>
+      <ID>id_53e892b8b41cc4caece1cfd5ef21d6e7</ID>
+      <Filename>LICENSE.md</Filename>
+      <Filepath>LICENSE.md</Filepath>
+      <FileVersion></FileVersion>
+      <FileType>.md</FileType>
+      <ParentFileID>id_94b93b538f00c94eed4a3bd16febbc5d</ParentFileID>
+    </File>
+  </Files>
+</KeymanDeveloperProject>
