@@ -1,0 +1,97 @@
+﻿c Version 1.0 - initial version - Ngbaka Keyboard for Keyman 10.0
+c Version 2.0 - deadkey changed; also treament of diacritics
+c Version 2.1 - attempts to exclude certain vowel+diacritic combinations
+c Version 2.2 - drastic code change to method suggested by Jim Brase
+c Version 2.2.1 - Diacritic stacking added
+c Version 2.2.2 - new method for open vowels. Deadkey still in use.
+c Version 2.2.3 - Changes to diacritics; merge method from Doug Higby
+c Version 2.2.4 - Remove need for semicolon
+c 2.2.5 - Method to control stacked diacritics
+c 2.2.5 - dk semicolon reintroduced
+c 2.2.5 - Combining grave now only above tilde
+c 2.2.5 - C-cedilla without deadkey: use c+backquote
+c 2.2.6 - various deadkey combinations eliminated
+c 2.2.6 - Use of deadkey eliminated
+c 2.2.7 - Distinguishes vowels that do/do not take combining tilde
+c 2.2.7.3 - é ó now appear as intended
+c 2.3 - Migrate to GitHub environment
+c 2.4 - File names changed to comply with Keyman lower case name rule
+
+c NOTE: Courier New displays wrongly; Charis SIL etc are fine
+c so set character font with Shift + Ctrl + F
+c This keyboard program uses a simplified set of keys
+c for typing Ngbaka on a Windows PC, or an Apple Mac machine.
+
+store(&Version) "10.0"
+store(&NAME) 'ngbaka'
+store(&TARGETS) 'windows macosx desktop'
+store(&COPYRIGHT) '© MissionAssist CIO'
+store(&MESSAGE) 'MissionAssist CIO is a UK entity'
+store(&KEYBOARDVERSION) '2.4'
+store(&BITMAP) 'ngbaka.ico'
+store(&MnemonicLayout) "1"   c This keyboard uses a mnemonic layout.
+
+c Characters which do not take a diacritic - add any missed earlier
+store (non_dia) 'bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ`~1234567890-=!@#$£%^&*()_+,./|\"<>?[]{}:;«»¬'
+
+c Vowels which can take any diacritic
+c To permit tilde on any vowel add the no_tilde store values here and remove or comment out lines 56 & 82
+store(any_dia)  U+0041 U+0190 U+0049 U+0186 U+0055 \
+                U+0061 U+025B U+0069 U+0254 U+0075
+
+c Vowels that do not take tilde - see line 35 - this store sets up the restriction
+store(no_tilde) U+0045 U+0065 U+004F U+006F
+
+c Diacritics above which grave must not stack; also the C-cedillas
+store (no_stack) "`" "/" "^" "̈" U+0300 U+0301 U+0302 U+0308 U+00C7 U+00E7
+
+c Individual modifier keys
+store(GraveK)   '`'     c Back quote
+store(AcuteK)   '/'     c forward slash   
+store(CircK)    '^'     c "^"
+store(TildeK)   '~'    c "~"
+
+c Put modifiers together - Smodifier is for the tilde-only set
+store(modifierK)    $GraveK $AcuteK $CircK $TildeK
+store(Umodifier) U+0300 U+0301 U+0302 U+0303
+
+c Next line required for the tilde restriction
+store(SmodifierK)    $GraveK $AcuteK $CircK 
+store(Smodifier) U+0300 U+0301 U+0302
+
+begin Unicode > use(main)
+
+group(main) using keys
+                                        
+c Rules for other characters
+"[" + "[" > U+025B  c Lower case Open E
+"{" + "{" > U+0190  c Upper case Open E
+
+"]" + "]" > U+0254  c Lower case Open O
+"}" + "}" > U+0186  c Upper case Open O
+
+c C-cedilla characters without deadkey
+"c" + "`"> U+00E7  c c-cedilla
+"C" + "`"> U+00C7  c C-cedilla
+
+c Other items
+"<" + "<" > U+00AB        c Angled quotes left
+">" + ">" > U+00BB        c Angled quotes right
+
+c Take any permitted vowel and add combining diacritic
+c indexing the diacritic by input key
+any(any_dia) + any(modifierK) > context index(Umodifier,2)
+
+c Next line implements the tilde restriction - diacritic set omits tilde
+any(no_tilde) + any(SmodifierK) > context index(Smodifier,2)
+
+c Prevent diacritic being added to any non-vowel character
+any(non_dia) + any(modifierK) > context
+
+c Stack U+0300 above tilde
++ "`" > U+0300
+
+c Prevent grave diacritic stacking except above tilde
+any(no_stack) + "`" > context
+
+c End of keyboard

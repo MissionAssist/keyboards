@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package>
+  <System>
+    <KeymanDeveloperVersion>10.0.1201.0</KeymanDeveloperVersion>
+    <FileVersion>7.0</FileVersion>
+  </System>
+  <Options>
+    <ExecuteProgram></ExecuteProgram>
+    <GraphicFile>source\MA_ngbaka_latin.ico</GraphicFile>
+    <MSIFileName>D:\Users\Stephen\Downloads\keymandesktop100.msi</MSIFileName>
+    <MSIOptions></MSIOptions>
+    <FollowKeyboardVersion/>
+  </Options>
+  <StartMenu>
+    <Folder></Folder>
+    <Items/>
+  </StartMenu>
+  <Info>
+    <Version URL="">2.3</Version>
+    <Name URL="">Ngbaka Latin (MissionAssist)</Name>
+    <Copyright URL="">© MissionAssist CIO</Copyright>
+    <Author URL="mailto:unicode-tech@missionassist.org.uk">Dennis Pepler</Author>
+  </Info>
+  <Files>
+    <File>
+      <Name>build\MA_ngbaka_latin.kmx</Name>
+      <Description>Keyboard MA_ngbaka_latin</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.kmx</FileType>
+    </File>
+    <File>
+      <Name>HISTORY.md</Name>
+      <Description>File HISTORY.md</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.md</FileType>
+    </File>
+    <File>
+      <Name>LICENSE.md</Name>
+      <Description>File LICENSE.md</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.md</FileType>
+    </File>
+    <File>
+      <Name>source\MA_ngbaka_latin.ico</Name>
+      <Description>File MA_ngbaka_latin.ico</Description>
+      <CopyLocation>0</CopyLocation>
+      <FileType>.ico</FileType>
+    </File>
+  </Files>
+  <Keyboards>
+    <Keyboard>
+      <Name>MA_ngbaka_latin</Name>
+      <ID>ma_ngbaka_latin</ID>
+      <Version>2.3</Version>
+      <Languages/>
+    </Keyboard>
+  </Keyboards>
+  <Strings/>
+</Package>
